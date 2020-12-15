@@ -1,0 +1,5 @@
+export VAULT_ADDR=https://127.0.0.1:8200
+# This verifies the Server Cert, so we use it's CA chain, not the clients
+export VAULT_CACERT="$DIR/output/server-certs/ca_chain.pem"
+export VAULT_CLIENT_CERT="$DIR/output/client-certs/client-cert.pem"
+export VAULT_CLIENT_KEY="$DIR/output/client-certs/client-key.pem"
