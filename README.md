@@ -1,19 +1,17 @@
 
 # About
 
-Modules covering much of the functionality provided by Hashicorp Vault. Built as simply as possible in order to help demystify the underlying mechanics of how vault works. They aren't intended to be production ready, but they can certainly provide a modular scaffold to build out formal processes.
-
-There is no root module, these are the LEGOS.
+A collection of simple modules for configuring many of the auth frontends and secret backends of Hashicorp Vault. Designed to both simplify and demystify the process of Vault configuration/setup. They aren't guaranteed to be production ready, but they are useful as templates blocks to build out more complex configurations.
 
 # Module List
 
 ## Auth
 
-Most of these mount a backend ag the default path
+Most of these modules mount their backend at the default path
 
 ### Approle
 
-Simple approle, mounts bacprovides an included identity and alias
+Simple approle, mounts backend and creates an included identity and alias
 
 ## Certificate Authority
 
@@ -47,7 +45,7 @@ Simple modules to bulk import identities and groups, these aren't very functiona
 
 ## Policies
 
-This is pretty much a archive of fairly simple policies that I dont use but dont want to dispose of. However the "god" policy is very useful. It is trying to recreate the permissions of root without using the root token. If you find a credential that god is missing, I would like to find out.
+This is pretty much a archive of fairly simple policies that I dont use but dont want to dispose of. However the "god" policy is very useful. It is trying to mimic root permissions without using the root token.
 
 ## Secrets
 
