@@ -2,7 +2,7 @@ terraform {
   required_providers {
     postgresql = {
       source = "cyrilgdn/postgresql"
-      version = "1.7.2"
+      version = "1.10.0"
     }
     vault = {
       source  = "hashicorp/vault"
