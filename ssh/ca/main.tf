@@ -25,6 +25,6 @@ resource "vault_ssh_secret_backend_role" "ssh_ca_role" {
 }
 
 resource "vault_generic_secret" "cert" {
-  path = "data/ssh/cert"
+  path      = "data/ssh/cert"
   data_json = jsonencode(vault_ssh_secret_backend_role.ssh_ca_role)
 }

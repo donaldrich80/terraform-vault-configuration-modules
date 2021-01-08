@@ -1,17 +1,17 @@
 resource "vault_mount" "ssh" {
-  path        = var.path
-  type        = "ssh"
-  description = "ssh backend"
+  path                      = var.path
+  type                      = "ssh"
+  description               = "ssh backend"
   default_lease_ttl_seconds = 300
-  max_lease_ttl_seconds = 3000
+  max_lease_ttl_seconds     = 3000
 }
 
 variable "path" {
-  default     = "ssh"
+  default = "ssh"
 }
 
 variable "generate_signing_key" {
-  default     = true
+  default = true
 }
 
 resource "vault_ssh_secret_backend_ca" "ssh_ca" {

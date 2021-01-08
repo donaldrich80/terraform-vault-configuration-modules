@@ -9,7 +9,7 @@ variable server_cert_domain {}
 variable client_cert_domain {}
 
 variable root_path {
-  default     = "cert"
+  default = "cert"
 }
 variable server_cert_url {}
 variable ca_key_private {}

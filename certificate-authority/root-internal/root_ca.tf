@@ -17,18 +17,18 @@ resource "vault_pki_secret_backend_config_urls" "config_urls" {
 
 # Create Root Certificate in Vault
 resource "vault_pki_secret_backend_root_cert" "ca-cert" {
-  depends_on = [vault_pki_secret_backend_config_urls.config_urls]
-  backend = vault_mount.root.path
-  type        = "internal"
-  common_name = "${var.server_cert_domain} Root CA"
-  ttl = 473040000
-  format = "pem"
-  private_key_format = "der"
-  key_type = "rsa"
-  key_bits = 4096
+  depends_on           = [vault_pki_secret_backend_config_urls.config_urls]
+  backend              = vault_mount.root.path
+  type                 = "internal"
+  common_name          = "${var.server_cert_domain} Root CA"
+  ttl                  = 473040000
+  format               = "pem"
+  private_key_format   = "der"
+  key_type             = "rsa"
+  key_bits             = 4096
   exclude_cn_from_sans = true
-  ou = "Developent"
-  organization = var.organization
+  ou                   = "Developent"
+  organization         = var.organization
 
 }
 

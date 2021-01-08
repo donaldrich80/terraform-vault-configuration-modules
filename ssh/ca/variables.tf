@@ -1,9 +1,9 @@
 variable "backend" {
-  default     = "ssh"
+  default = "ssh"
 }
 
 variable "name" {
-  default     = "ca"
+  default = "ca"
 }
 
 variable "allowed_users" {

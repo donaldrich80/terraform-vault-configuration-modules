@@ -8,10 +8,10 @@ variable client_cert_domain {
 }
 
 variable root_path {
-  default     = "cert"
+  default = "cert"
 }
 variable int_path {
-  default     = "int-ca"
+  default = "int-ca"
 }
 variable server_cert_url {
   description = "URL to issue root certs"

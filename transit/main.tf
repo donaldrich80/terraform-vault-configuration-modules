@@ -24,7 +24,7 @@ EOT
 }
 
 resource "vault_token" "token" {
-  policies = [vault_policy.policy.name]
+  policies     = [vault_policy.policy.name]
   wrapping_ttl = 120
 }
 

@@ -23,10 +23,10 @@ EOT
 }
 
 resource "vault_jwt_auth_backend_role" "role" {
-  backend        = vault_jwt_auth_backend.auth.path
-  role_name      = var.role_name
-  token_policies = var.role_policies
-  bound_claims   = var.role_bound_claims
+  backend                = vault_jwt_auth_backend.auth.path
+  role_name              = var.role_name
+  token_policies         = var.role_policies
+  bound_claims           = var.role_bound_claims
   user_claim             = "user_email"
   role_type              = "jwt"
   token_explicit_max_ttl = 600
