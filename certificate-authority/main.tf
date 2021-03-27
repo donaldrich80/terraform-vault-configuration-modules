@@ -1,13 +1,13 @@
 module "root_cert_auth" {
-  source       = "./root-internal"
-  depends_on              = [tls_private_key.ca_key, tls_self_signed_cert.ca_cert]
-  server_cert_url = var.server_cert_url
+  source             = "./root-internal"
+  depends_on         = [tls_private_key.ca_key, tls_self_signed_cert.ca_cert]
+  server_cert_url    = var.server_cert_url
   client_cert_domain = var.client_cert_domain
   server_cert_domain = var.server_cert_domain
-  ca_key_private = tls_private_key.ca_key.private_key_pem
-  ca_cert_cert_pem  = tls_self_signed_cert.ca_cert.cert_pem
-  organization = var.organization
-  locality = var.locality
+  ca_key_private     = tls_private_key.ca_key.private_key_pem
+  ca_cert_cert_pem   = tls_self_signed_cert.ca_cert.cert_pem
+  organization       = var.organization
+  locality           = var.locality
 }
 
 # module "int_cert_auth" {

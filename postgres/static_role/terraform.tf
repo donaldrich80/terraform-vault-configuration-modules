@@ -12,21 +12,21 @@ terraform {
 }
 
 provider "postgresql" {
-  host            = var.POSTGRES_HOST
-  port            = var.POSTGRES_PORT
-  database        = var.POSTGRES_DB
-  username        = var.POSTGRES_ROOTUSER
-  password        = var.POSTGRES_ROOTPASS
-  sslmode = "disable"
+  host     = var.POSTGRES_HOST
+  port     = var.POSTGRES_PORT
+  database = var.POSTGRES_DB
+  username = var.POSTGRES_ROOTUSER
+  password = var.POSTGRES_ROOTPASS
+  sslmode  = "disable"
 }
 resource "postgresql_role" "role" {
-  name     = "username"
-  login    = true
-  password = "userpass"
-  create_database           = true
-  create_role               = true
-  superuser                 = true
-  replication = true
+  name            = "username"
+  login           = true
+  password        = "userpass"
+  create_database = true
+  create_role     = true
+  superuser       = true
+  replication     = true
 }
 
 

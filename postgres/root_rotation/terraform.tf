@@ -12,12 +12,12 @@ terraform {
 }
 
 provider "postgresql" {
-  host            = var.POSTGRES_HOST
-  port            = var.POSTGRES_PORT
-  database        = var.POSTGRES_DB
-  username        = var.POSTGRES_ROOTUSER
-  password        = var.POSTGRES_ROOTPASS
-  sslmode = "disable"
+  host     = var.POSTGRES_HOST
+  port     = var.POSTGRES_PORT
+  database = var.POSTGRES_DB
+  username = var.POSTGRES_ROOTUSER
+  password = var.POSTGRES_ROOTPASS
+  sslmode  = "disable"
 }
 
 

@@ -1,6 +1,6 @@
 resource "vault_mount" "database" {
-  path = var.database_path
-  type = "database"
+  path        = var.database_path
+  type        = "database"
   description = "postgres managed by Terraform"
 }
 

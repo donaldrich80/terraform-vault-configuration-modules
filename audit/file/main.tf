@@ -1,9 +1,9 @@
 resource "vault_audit" "file1" {
-  type = "file"
+  type        = "file"
   description = var.description
   options = {
     file_path = var.file_path
-    mode = "0600"
+    mode      = "0600"
   }
 }
 

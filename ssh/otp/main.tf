@@ -15,10 +15,10 @@ resource "vault_ssh_secret_backend_role" "ssh_otp_role" {
   allowed_users = var.allowed_users
   cidr_list     = var.cidr_list
   # ttl           = var.ttl
-  default_user  = var.default_user
+  default_user = var.default_user
 }
 
 resource "vault_generic_secret" "otp" {
-  path = "data/ssh/otp"
+  path      = "data/ssh/otp"
   data_json = jsonencode(vault_ssh_secret_backend_role.ssh_otp_role)
 }

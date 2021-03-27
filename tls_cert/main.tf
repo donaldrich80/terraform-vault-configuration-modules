@@ -1,17 +1,17 @@
 resource "vault_auth_backend" "cert" {
-    path = "cert"
-    type = "cert"
+  path = "cert"
+  type = "cert"
 }
 
 resource "vault_cert_auth_backend_role" "role" {
-    depends_on              = [tls_self_signed_cert.cert]
-    name           = "foo"
-    certificate    = tls_self_signed_cert.cert.cert_pem
-    backend        = vault_auth_backend.cert.path
-    allowed_names  = ["foo.example.org", "baz.example.org"]
-    token_ttl      = 300
-    token_max_ttl  = 600
-    token_policies = ["foo"]
+  depends_on     = [tls_self_signed_cert.cert]
+  name           = "foo"
+  certificate    = tls_self_signed_cert.cert.cert_pem
+  backend        = vault_auth_backend.cert.path
+  allowed_names  = ["foo.example.org", "baz.example.org"]
+  token_ttl      = 300
+  token_max_ttl  = 600
+  token_policies = ["foo"]
 }
 
 resource tls_private_key key {
@@ -20,9 +20,9 @@ resource tls_private_key key {
 }
 
 resource "vault_generic_secret" "role" {
-  depends_on              = [vault_cert_auth_backend_role.role]
-  path = "data/cert/${vault_cert_auth_backend_role.role.name}/role"
-  data_json = jsonencode(vault_cert_auth_backend_role.role)
+  depends_on = [vault_cert_auth_backend_role.role]
+  path       = "data/cert/${vault_cert_auth_backend_role.role.name}/role"
+  data_json  = jsonencode(vault_cert_auth_backend_role.role)
 }
 
 # resource "vault_generic_secret" "cert" {
@@ -32,15 +32,15 @@ resource "vault_generic_secret" "role" {
 # }
 
 resource "vault_generic_secret" "cert" {
-  depends_on              = [tls_self_signed_cert.cert]
-  path = "data/cert/${vault_cert_auth_backend_role.role.name}/cert"
-  data_json = jsonencode(tls_self_signed_cert.cert)
+  depends_on = [tls_self_signed_cert.cert]
+  path       = "data/cert/${vault_cert_auth_backend_role.role.name}/cert"
+  data_json  = jsonencode(tls_self_signed_cert.cert)
 }
 
 resource "vault_generic_secret" "key" {
-  depends_on              = [tls_private_key.key]
-  path = "data/cert/${vault_cert_auth_backend_role.role.name}/key"
-  data_json = jsonencode(tls_private_key.key)
+  depends_on = [tls_private_key.key]
+  path       = "data/cert/${vault_cert_auth_backend_role.role.name}/key"
+  data_json  = jsonencode(tls_private_key.key)
 }
 
 # resource "vault_generic_secret" "key" {

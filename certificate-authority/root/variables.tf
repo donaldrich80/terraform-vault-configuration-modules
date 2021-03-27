@@ -8,7 +8,7 @@ variable client_cert_domain {
 }
 
 variable path {
-  default     = "cert"
+  default = "cert"
 }
 variable server_cert_url {
   # description = "We create a role to create client certs, what DNS domain will these certs be in"

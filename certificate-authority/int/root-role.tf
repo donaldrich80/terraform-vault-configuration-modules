@@ -14,8 +14,8 @@ resource "vault_pki_secret_backend_role" "role-server-cer" {
   organization       = [var.organization]
   country            = ["usa"]
   locality           = [var.locality]
-  max_ttl = 63113904
-  ttl      = 2592000
-  no_store = true
+  max_ttl            = 63113904
+  ttl                = 2592000
+  no_store           = true
 
 }

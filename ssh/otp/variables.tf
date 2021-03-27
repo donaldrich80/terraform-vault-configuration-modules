@@ -1,5 +1,5 @@
 variable "path" {
-  default     = "ssh"
+  default = "ssh"
 }
 
 variable "ssh_otp_role" {
